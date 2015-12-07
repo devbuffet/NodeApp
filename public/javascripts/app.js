@@ -26,14 +26,28 @@
       listingProgress: null,
       itemProgress: [],
       movieMessage: null,
-      movieTitle: null
+      movieTitle: null,
+      authorized: null
+    };
+    
+    // authenticate the request
+    $scope.authenticate = function () {
+      $http.get('/user/auth/' + $scope.Movie.api_key)
+        .success(function (resp) {
+          if (resp != undefined) {
+            if (resp.api_key == $scope.Movie.api_key) {
+              // they are authorized
+              $scope.Movie.authorized = true;
+            }
+          }
+        });
     };
     
     // filter movie by title
     $scope.filterMovie = function (resp) {
 
       var movies = [];
-     
+
       for (var i = 0; i < resp.length; i++) {
         var item = resp[i];
         if (item.title != undefined && item.title.toLowerCase().indexOf($scope.Movie.movieTitle) > -1) {
@@ -45,8 +59,8 @@
     
     // get movie listings based on category
     $scope.getMoviesListing = function () {
-      
-      return;
+
+      $scope.Movie.authorized = true;
       
       // get selected category
       var selectedCategory = $scope.Movie.selectedCategory;
