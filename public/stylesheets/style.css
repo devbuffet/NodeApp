@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+.gap
+{
+  margin-top: 40px;
+}
+
+.small_gap
+{
+  margin-top: 20px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+h1 {
+    border-bottom-style: dashed;
+    border-bottom-color: #e0e0e0;
+}
+
+.alert_bgColor
+{
+  background-color:#e0e0e0;
+}
