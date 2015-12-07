@@ -24,13 +24,12 @@ router.get('/api/list/:type', function (req, res) {
             
             // get the key to pass into record page
             var key = $(this).attr('href').split('/');
-            
-            // clean title
-            var title = ($(this).attr('title') != undefined ? $(this).attr('title').replace('Watch','').replace('online','') : $(this).attr('title'));
-            
-            // add data to array
-            objData.push({ key: key[key.length - 1], href: $(this).attr('href'), title: title, image_url: "http://www.zmovie.tw/files/movies/" + $(this).attr('href').split('/')[5] + ".jpg", data: {rating:null} });
-          }
+           
+            if($(this).text() != undefined && $(this).text().indexOf('...') == -1)
+            {
+              // add data to array
+              objData.push({ key: key[key.length - 1], href: $(this).attr('href'), title: $(this).text(), image_url: "http://www.zmovie.tw/files/movies/" + $(this).attr('href').split('/')[5] + ".jpg", data: {rating:null} });            }
+           }
         }
       });
     }
