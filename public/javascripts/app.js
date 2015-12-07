@@ -46,6 +46,8 @@
     // get movie listings based on category
     $scope.getMoviesListing = function () {
       
+      return;
+      
       // get selected category
       var selectedCategory = $scope.Movie.selectedCategory;
       
