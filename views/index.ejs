@@ -18,12 +18,12 @@
         <div class="small_gap">
           <form ng-show="Movie.authorized == null" class="form-inline" role="form">
             <div class="form-group">
-              <input placeholder="Enter key" type="text" class="form-control" ng-model="Movie.api_key" />
+              <input placeholder="Enter key" type="password" class="form-control" ng-model="Movie.api_key" />
             </div>
             <div class="form-group">
               <input type="submit" class="form-control btn btn-success" value="Login" ng-click="authenticate();" />
             </div>
-          </form>
+          </form>        
           <form ng-show="Movie.authorized != null" class="form-inline" role="form">
             <div class="form-group">
               <div class="btn-group" uib-dropdown is-open="status_category.isopen">

@@ -32,12 +32,24 @@
     
     // authenticate the request
     $scope.authenticate = function () {
+      
+      // show please wait
+      $scope.Movie.listingProgress = true;
+     
       $http.get('/user/auth/' + $scope.Movie.api_key)
         .success(function (resp) {
+  
+          // clear please wait
+          $scope.Movie.listingProgress = null;        
+          
           if (resp != undefined) {
             if (resp.api_key == $scope.Movie.api_key) {
               // they are authorized
               $scope.Movie.authorized = true;
+            }
+            else
+            {
+              alert('Incorrect login key. Please try again');
             }
           }
         });
