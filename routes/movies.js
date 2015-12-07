@@ -28,7 +28,7 @@ router.get('/api/list/:type', function (req, res) {
             if($(this).text() != undefined && $(this).text().indexOf('...') == -1)
             {
               // add data to array
-              objData.push({ key: key[key.length - 1], href: $(this).attr('href'), title: $(this).text(), image_url: "http://www.zmovie.tw/files/movies/" + $(this).attr('href').split('/')[5] + ".jpg", data: {rating:null} });            }
+              objData.push({ key: key[key.length - 1], href: $(this).attr('href'), title: $(this).text().replace(/""/g, ""), image_url: "http://www.zmovie.tw/files/movies/" + $(this).attr('href').split('/')[5] + ".jpg", data: {rating:null} });            }
            }
         }
       });
