@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express Test' });
 });
 
+router.get('/user/auth/:api_key', function(req, res, next) {
+  //res.json({ title: req.params.api_key });
+  res.json({key: process.env.api_key});
+});
+
+
 module.exports = router;
