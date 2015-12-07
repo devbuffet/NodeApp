@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/user/auth/:api_key', function(req, res, next) {
-  res.json({api_key: 'xxx'});
+  res.json({api_key: process.env.api_key});
   // process.env.api_key
 });
 
