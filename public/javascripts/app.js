@@ -43,7 +43,7 @@
           $scope.Movie.listingProgress = null;        
           
           if (resp != undefined) {
-            if (resp.api_key == $scope.Movie.api_key) {
+            if (resp.api_key !=null && resp.api_key == $scope.Movie.api_key) {
               // they are authorized
               $scope.Movie.authorized = true;
             }

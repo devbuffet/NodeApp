@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/user/auth/:api_key', function(req, res, next) {
+	console.log('param:' + req.params.api_key);
   var key = null;
   if(req.params.api_key == process.env.api_key)
   {
